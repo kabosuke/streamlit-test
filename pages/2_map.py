@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
+# import numpy as np
 import pydeck as pdk
 
 
@@ -17,11 +17,11 @@ st.sidebar.markdown("Mapping Demo")
 
 st.markdown("## 世帯数マップ(2024年12月01日現在)")
 
-# 標準正規分布に従ったランダム値(埼玉県庁のあたりを中心)
-chart_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [pos_kencho['lat'], pos_kencho['lon']],
-    columns=["lat", "lon"] 
-)
+# 標準正規分布に従ったランダム値(埼玉県庁のあたりを中心)  # もう使わない
+# chart_data = pd.DataFrame(
+#     np.random.randn(1000, 2) / [50, 50] + [pos_kencho['lat'], pos_kencho['lon']],
+#     columns=["lat", "lon"] 
+# )
 
 # 埼玉県市町村別人口情報を読み込む(https://www.pref.saitama.lg.jp/からDL)
 population_data = pd.read_excel("埼玉県市町村別人口2024.xlsx", sheet_name="12月", header=5, index_col=0)
